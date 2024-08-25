@@ -321,13 +321,13 @@ const WaterManagementDashboard = () => {  // This is the main component
 
   return (
     <div className="p-4 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">
-        IoT Water Management Dashboard
+      <h1 className="text-5xl text-gray-700 font-bold-roboto mb-4">
+        Water Management System
       </h1>
 
       <LeakAlert status={overallStatus} />
 
-      <Tabs defaultValue="overview" className="mt-4">
+      <Tabs defaultValue="overview" className="mt-3" >
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="quality">Water Quality</TabsTrigger>
