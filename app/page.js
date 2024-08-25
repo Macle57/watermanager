@@ -1,6 +1,7 @@
 "use client";
 
- 
+ require("dotenv").config();
+ const myApiKey = process.env.mapsapi;
 import React, { useState, useEffect } from "react";
 import {
   BarChart,
@@ -31,6 +32,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import MapComponent from "@/components/ui/map";
 
 const generateMockData = () => {
   const nodes = ["Main Tank", "Node A", "Node B", "Node C", "Node D", "Node E"];
@@ -300,6 +302,8 @@ const DroughtManagement = ({ data }) => {
 const WaterManagementDashboard = () => {  // This is the main component
   const [data, setData] = useState([]);
   const [consumptionData, setConsumptionData] = useState([]);
+  console.log(myApiKey);
+  
 
   useEffect(() => {
     setData(generateMockData());
@@ -334,6 +338,7 @@ const WaterManagementDashboard = () => {  // This is the main component
           <TabsTrigger value="maintenance">Maintenance</TabsTrigger>
           <TabsTrigger value="consumption">Consumption</TabsTrigger>
           <TabsTrigger value="drought">Drought Management</TabsTrigger>
+          <TabsTrigger value="map">Map</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview">
@@ -401,6 +406,10 @@ const WaterManagementDashboard = () => {  // This is the main component
             <DroughtManagement data={data} />
             <WaterScarcityPrediction data={data} />
           </div>
+        </TabsContent>
+
+        <TabsContent value="map">
+          <MapComponent/>
         </TabsContent>
       </Tabs>
     </div>
