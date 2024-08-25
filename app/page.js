@@ -297,7 +297,7 @@ const DroughtManagement = ({ data }) => {
   );
 };
 
-const WaterManagementDashboard = () => {
+const WaterManagementDashboard = () => {  // This is the main component
   const [data, setData] = useState([]);
   const [consumptionData, setConsumptionData] = useState([]);
 

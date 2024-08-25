@@ -3,7 +3,8 @@ https://pnpm.io/installation
 
 open powershell and run the following command to install pnpm, ignore if already installed.
 Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
-
+and run 
+npm i -g pnpm to install pnpm globally
 
 then start with 
 pnpm install
